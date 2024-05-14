@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new servers or blueprints</p>
+    <label>Server Name</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerName" /> -->
+    <!-- Ngoài sử dụng two-way-data-binding có thể sử dụng local ref để lưu hoặc sử dụng dữ liệu
+    tại một thời điểm nào đó hay tại một behavior bất kỳ -->
+    <!-- Local ref có thể được đặt trên bất kỳ phần tử HTML, bất cứ thành phần nào có trong template 
+    Nó sẽ giữ một tham chiếu đến phần tử này  -->
+    <input type="text" class="form-control" #newServerName />
+
+    <label>Server Content</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent" /> -->
+    <!-- Trong trường hợp này chúng ta sẽ kết hợp sử dụng local ref và @ViewChild(bộ chọn phần tử) để truy cập 
+      trực tiếp vào các phần tử trong DOM gốc -->
+
+    <input type="text" class="form-control" #newServerContent />
+    <br />
+    <button class="btn btn-primary" (click)="onAddServer(newServerName)">
+      Add Server
+    </button>
+    <button class="btn btn-primary" (click)="onAddBlueprint(newServerName)">
+      Add Server Blueprint
+    </button>
+  </div>
+</div>
