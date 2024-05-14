@@ -68,6 +68,14 @@ export class AppComponent {
   getColor() {
     return this.allowNewServer === true ? 'green' : 'green';
   }
+
+  onChangeFirst() {
+    this.serverElements[0].name = 'Changed';
+  }
+
+  onDestroyElement() {
+    this.serverElements.splice(0, 1);
+  }
   //Data binding
   // 1. String Interpolation (nội suy chuỗi) : phân giải một chuỗi và trả về một chuỗi
   //  <div>{{ name }}</div>

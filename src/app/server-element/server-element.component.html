@@ -1,16 +1,9 @@
 <div class="panel panel-default">
-  <div class="panel-heading">{{ element.name }}</div>
+  <div class="panel-heading" #heading>{{ name }}</div>
   <div class="panel-body">
     <!-- Mọi thứ bạn đặt vào giữa thẻ đóng và thẻ mở của một component riêng của bạn sẽ bị biến mất theo mặc định
          nó đơn giản là bị xóa khỏi DOM. Vì vậy tại nơi muốn hiển thị nội dung HTML được component cha truyền vào
         lúc selector, hãy đánh dấu vị trí đó bằng việc sử dụng directive ng-content -->
-    <p>
-      <strong *ngIf="element.type === 'server'" style="color: red">{{
-        element.content
-      }}</strong>
-      <em *ngIf="element.type === 'blueprints'" style="color: blue">{{
-        element.content
-      }}</em>
-    </p>
+    <ng-content></ng-content>
   </div>
 </div>
