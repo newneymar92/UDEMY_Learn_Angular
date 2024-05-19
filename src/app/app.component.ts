@@ -45,6 +45,13 @@ export class AppComponent {
     });
   }
 
+  //Section 7
+  numbers = [1, 2, 3, 4, 5, 6];
+  oddNumbers = [1, 3, 5];
+  evenNumbers = [2, 4, 6];
+  onlyOdd = false;
+  value = 10;
+
   newServerName = '';
   newServerContent = '';
   getName() {

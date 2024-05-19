@@ -224,7 +224,8 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <!-- code here -->
+
+      <!-- Section 1 -->
       <h1>Hello, {{ title }}</h1>
       <input type="text" [(ngModel)]="name" />
       <div>{{ name }}</div>
@@ -240,9 +241,9 @@
       <div>{{ serverName }}</div>
       <app-server></app-server>
       <app-testcomp></app-testcomp>
-
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
+    <!-- Section 1 -->
 
     <!-- Section 5 -->
     <div class="container">
@@ -280,6 +281,59 @@
         </div>
       </div>
     </div>
+    <!-- Section 5 -->
+
+    <!-- Section 7 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">
+            Only show odd numbers
+          </button>
+          <br />
+          <ul class="list-group">
+            <div *ngIf="onlyOdd">
+              <li
+                [ngClass]="{ oddColor: number % 2 !== 0 }"
+                [ngStyle]="{
+                  backgroundColor: number % 2 !== 0 ? 'yellow' : 'grey'
+                }"
+                class="list-group-item"
+                *ngFor="let number of oddNumbers"
+              >
+                {{ number }}
+              </li>
+            </div>
+
+            <div *ngIf="!onlyOdd">
+              <li
+                [ngClass]="{ oddColor: number % 2 !== 0 }"
+                [ngStyle]="{
+                  backgroundColor: number % 2 !== 0 ? 'yellow' : 'grey'
+                }"
+                class="list-group-item"
+                *ngFor="let number of evenNumbers"
+              >
+                {{ number }}
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <p appBasicHighlight>Style me with basic directive</p>
+      <p appBetterHighlight [defaultColor]="'yellow'">
+        Style me with a better directive
+      </p>
+
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="15">Value is 15</p>
+        <p *ngSwitchDefault>Value is default</p>
+      </div>
+    </div>
+
+    <!-- Section 7 -->
 
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
